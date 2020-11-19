@@ -8,17 +8,18 @@
 <div class="row">
     <div class="col-md-12">
         <h2>FILM DI OGGI</h2>
-       
-<p>
-    @foreach (var filmOggi in Model.FilmProiettati) {
-        foreach (var films in Model.Film) {
-            if (filmOggi.Id == films.Id) {
-                @films.Titolo <span>nella sala @filmOggi.IdSala alle ore @filmOggi.Data.Hour : @filmOggi.Data.Minute</span>
+
+        <p>
+            @foreach (var filmOggi in Model.FilmProiettati) {
+                foreach (var films in Model.Film) {
+                    if (filmOggi.Id == films.Id) {
+                        @films.Titolo <span>nella sala @filmOggi.IdSala alle ore @filmOggi.Data.Hour : @filmOggi.Data.Minute</span>
+                    }
+                }
             }
-        }
-    }
-</p>
-    <a class="btn btn-primary" href="@Url.Action("Compra","Biglietto")">Compra un biglietto</a>   
+        </p>
+        <a class="btn btn-primary" href="@Url.Action("Compra","Biglietto")">Compra un biglietto</a>
+        <a class="btn btn-primary" href="@Url.Action("Index","Biglietto")">Lista biglietti comprati</a>
     </div>
 
 </div>
