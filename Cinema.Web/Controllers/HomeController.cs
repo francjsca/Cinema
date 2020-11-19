@@ -32,16 +32,6 @@ namespace Cinema.Web.Controllers {
             return View(new DashboardView(filmOggi, film));
         }
 
-        public ActionResult Compra(BigliettoView biglietto)
-        {
-            try {
-                _bigliettoSqlProvider.Insert(biglietto.ToBiglietto());
-
-                return RedirectToAction("Index");
-            }
-            catch {
-                return View();
-            }
-        }
+     
     }
 }
