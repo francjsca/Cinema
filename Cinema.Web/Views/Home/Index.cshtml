@@ -13,7 +13,7 @@
     @foreach (var filmOggi in Model.FilmProiettati) {
         foreach (var films in Model.Film) {
             if (filmOggi.Id == films.Id) {
-                @films.Titolo <span>nella sala @filmOggi.IdSala</span>
+                @films.Titolo <span>nella sala @filmOggi.IdSala alle ore @filmOggi.Data.Hour : @filmOggi.Data.Minute</span>
             }
         }
     }

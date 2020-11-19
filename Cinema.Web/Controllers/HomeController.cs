@@ -29,21 +29,19 @@ namespace Cinema.Web.Controllers {
         {
             var filmOggi = _proiezioneSqlProvider.FilmOggi().Select(m => new ProiezioneView(m)).ToList();
             var film = _filmSqlProvider.GetAll().Select(m => new FilmView(m)).ToList();
-            return View(new DashboardView(filmOggi,film));
+            return View(new DashboardView(filmOggi, film));
         }
 
-        public ActionResult About()
+        public ActionResult Compra(BigliettoView biglietto)
         {
-            ViewBag.Message = "Your application description page.";
+            try {
+                _bigliettoSqlProvider.Insert(biglietto.ToBiglietto());
 
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+                return RedirectToAction("Index");
+            }
+            catch {
+                return View();
+            }
         }
     }
 }
