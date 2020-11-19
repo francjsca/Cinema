@@ -1,0 +1,24 @@
+﻿@model Cinema.Web.Models.DashboardView
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>FILM DI OGGI</h2>
+       
+<p>
+    @foreach (var filmOggi in Model.FilmProiettati) {
+        foreach (var films in Model.Film) {
+            if (filmOggi.Id == films.Id) {
+                @films.Titolo <span>nella sala @filmOggi.IdSala</span>
+            }
+        }
+    }
+</p>
+    <button class="btn btn-primary">Compra un biglietto</button>   
+    </div>
+
+</div>
