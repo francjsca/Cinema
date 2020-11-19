@@ -21,8 +21,8 @@ namespace Cinema.Web.Controllers
         // GET: Biglietto
         public ActionResult Index()
         {
-
-            return View();
+        var biglietti=    _bigliettoSqlProvider.GetAll().Select(m => new BigliettoView(m)).ToList();
+            return View(biglietti);
         }
 
         // GET: Biglietto/Details/5
