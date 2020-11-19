@@ -21,7 +21,7 @@ namespace Cinema.Providers {
                 conn.Open();
                 var reader = cmd.ExecuteReader();
                 while (reader.Read()) {
-                    biglietti.Add(new Biglietto(Convert.ToInt32(reader["Id"]), Convert.ToInt32(reader["IdProiezione"]), Convert.ToInt32(reader["IdSpettatore"]), Convert.ToInt32(reader["Fila"]), Convert.ToInt32(reader["Posto"]),(float)reader["Prezzo"]));
+                    biglietti.Add(new Biglietto(Convert.ToInt32(reader["Id"]), Convert.ToInt32(reader["IdProiezione"]), Convert.ToInt32(reader["IdSpettatore"]), Convert.ToInt32(reader["Fila"]), Convert.ToInt32(reader["NumeroPosto"]),Convert.ToDouble(reader["Prezzo"])));
                 }
             }
             return biglietti;

@@ -12,9 +12,9 @@ namespace Cinema {
         public int IdSpettatore { get; set; }
         public readonly int Fila;
         public readonly int NumeroPosto;
-        public float Prezzo { get; set; }
+        public double Prezzo { get; set; }
 
-        public Biglietto(int id, int idProiezione, int idSpettatore, int fila, int numeroPosto, float prezzo)
+        public Biglietto(int id, int idProiezione, int idSpettatore, int fila, int numeroPosto, double prezzo)
         {
             Id = id;
             IdProiezione = idProiezione;
